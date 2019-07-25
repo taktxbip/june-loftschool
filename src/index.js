@@ -1,9 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Chat from 'homework2/Chat/Chat';
-import Chat from 'homework2/Chat/Chat';
-import Message from 'homework2/Chat/Chat';
-// import { start } from 'repl';
+import Chat from './homework2/Chat/Chat';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-// ReactDOM.render(<App />, document.getElementById('root2'));
+ReactDOM.render(<Chat />, document.getElementById('root'));
