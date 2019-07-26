@@ -9,11 +9,11 @@ class Chat extends Component {
         messageInput: ''
     };
 
-    handleKeyPress = event => {
+    sendMessageOnEnter = event => {
         const value = this.state.messageInput;
         if (event.key === 'Enter') {
             this.setState(state => ({
-                messages: [...this.state.messages, {text: value}],
+                messages: [...this.state.messages, { text: value }],
                 messageInput: ''
             }))
         }
@@ -28,16 +28,18 @@ class Chat extends Component {
 
     render() {
         return (
-            <div className="Chat">
-                <div className="messages">
-                    {this.state.messages.map((element, id) => {
-                        return <Message text={element.text} key={id} />;
-                    })}
+            <div className="chat">
+                <div className="message-list">
+                    <div className="messages">
+                        {this.state.messages.map((element, id) => {
+                            return <Message text={element.text} key={id} />;
+                        })}
+                    </div>
                 </div>
                 <input
                     className="input-message"
                     onChange={this.changeInputMessage}
-                    onKeyPress={this.handleKeyPress}
+                    onKeyPress={this.sendMessageOnEnter}
                     value={this.state.messageInput}
                 />
             </div>
