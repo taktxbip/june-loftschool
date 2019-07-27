@@ -10,10 +10,9 @@ class Chat extends Component {
     };
 
     sendMessageOnEnter = event => {
-        const value = this.state.messageInput;
         if (event.key === 'Enter') {
             this.setState(state => ({
-                messages: [...this.state.messages, { text: value }],
+                messages: [...this.state.messages, { text: this.state.messageInput } ],
                 messageInput: ''
             }))
         }
@@ -31,7 +30,7 @@ class Chat extends Component {
             <div className="chat">
                 <div className="message-list">
                     <div className="messages">
-                        {this.state.messages.map((element, id) => {
+                        { this.state.messages.map((element, id) => {
                             return <Message text={element.text} key={id} />;
                         })}
                     </div>
@@ -46,8 +45,5 @@ class Chat extends Component {
         );
     }
 }
-
-
-
 
 export default Chat;
