@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Chat from './homework2/Chat/Chat';
+import LifeCycle from './homework3/LifeCycle';
 
-ReactDOM.render(<Chat />, document.getElementById('root'));
+ReactDOM.render(<LifeCycle />, document.getElementById('root'));
